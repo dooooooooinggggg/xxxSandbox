@@ -17,10 +17,10 @@ void printLinkedList(struct listStruct *thisList)
     return printLinkedList(thisList->next);
 }
 
-void AddValueToList(struct listStruct *linkedList, char value[20])
+void addValueToList(struct listStruct *linkedList, char value[20])
 {
     if (linkedList->next != NULL)
-        return AddValueToList(linkedList->next, value);
+        return addValueToList(linkedList->next, value);
 
     // それ以降
     struct listStruct *thisList = (struct listStruct *)malloc(sizeof(struct listStruct));
@@ -41,8 +41,8 @@ int main()
 {
     struct listStruct *linkedList;
     initList(linkedList, "aa");
-    AddValueToList(linkedList, "bb");
-    AddValueToList(linkedList, "cc");
+    addValueToList(linkedList, "bb");
+    addValueToList(linkedList, "cc");
     printLinkedList(linkedList);
     return 1;
 }
